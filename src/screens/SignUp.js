@@ -13,7 +13,7 @@ export default function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://mernback-jich.onrender.com/api/creatuser", {
+    const response = await fetch("https://backend-lcr7.onrender.com/api/creatuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

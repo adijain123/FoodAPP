@@ -9,7 +9,7 @@ export default function Home() {
     const [foodItem,setFoodItem] = useState([])
 
     const loadData = async () =>{
-      let response = await fetch("https://mernback-jich.onrender.com/api/foodData",{
+      let response = await fetch("https://backend-lcr7.onrender.com/api/foodData",{
       method:"POST",
       headers: {
         "Content-Type" : 'application/json'
@@ -39,7 +39,7 @@ export default function Home() {
     <div class="carousel-caption d-none d-md-block" style={{zIndex: "10"}}>
     <div className="d-flex justify-content-center">
         <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" value={search} onChange={(e)=>{setSearch(e.target.value)}} />
-        <button className="btn btn-success text-white" type="submit">Search</button>
+        <button className="btn btn-primary text-white" type="submit">Search</button>
       </div>
       </div>
       <div className="carousel-item active">
@@ -66,13 +66,13 @@ export default function Home() {
 
       <div className="container">
         {
-           foodCat !==[]
+           foodCat !=[]
            ? foodCat.map((data)=>{
               return ( <div className="row mb-3">
                   <div key={data._id} className="fs-3 m-3">
                     {data.CategoryName}</div>
                     <hr />
-                    {foodItem !== []
+                    {foodItem != []
                     ? foodItem.filter((item)=> (item.CategoryName===data.CategoryName) && (item.name.toLowerCase().includes(search.toLocaleLowerCase()))) 
                     .map(filterItems=>{
                       return (

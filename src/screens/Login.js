@@ -9,7 +9,7 @@ export default function Login() {
   let navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://mernback-jich.onrender.com/api/loginusers", {
+    const response = await fetch("https://backend-lcr7.onrender.com/api/loginusers", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

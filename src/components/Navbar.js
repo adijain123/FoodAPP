@@ -7,11 +7,12 @@ export default function Navbar() {
     localStorage.removeItem("authToken")
     navigate("/login")
   }
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
     <div className="container-fluid">
-      <Link className="navbar-brand fs-1" to ="/">Go Food</Link>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <Link className="navbar-brand fs-1" to ="/" style={{fontWeight:"900"}}>Go Food</Link>
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
         <span className="navbar-toggler-icon" />
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
@@ -27,13 +28,13 @@ export default function Navbar() {
        
         {(!localStorage.getItem("authToken")) ?
          <div className='d-flex'>
-        <Link className=" btn bg-white text-success mx-1 " to ="/login">Login</Link>
-        <Link className=" btn bg-white text-success mx-1 " to="/creatuser">SignUp</Link>
+        <Link className=" btn bg-white text-primary mx-1 " to ="/login">Login</Link>
+        <Link className=" btn bg-white text-primary mx-1 " to="/creatuser">SignUp</Link>
         </div>
         :
         <div className='d-flex'>
-        <div className=" btn bg-white text-success mx-2 " >My Cart</div>
-        <div className=" btn bg-white text-danger mx-2 " onClick={handleLogout}>Logout</div>
+        <div className=" btn text-primary mx-2 fs-5"  style={{backgroundColor: 'Cornsilk'}}>My Cart</div>
+        <div className=" btn text-danger mx-2 fs-5  d-flex align-items-center" onClick={handleLogout} style={{backgroundColor: 'Cornsilk'}}>Logout</div>
         <Link className="fs-5 nav-link" style={{color: 'PaleGoldenRod'}} >Hey, {localStorage.getItem('name')}</Link>
         </div>
         }
